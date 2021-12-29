@@ -1,0 +1,19 @@
+{
+  "cSpell.words": ["Vitesse"],
+  "prettier.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "files.associations": {
+    "*.css": "postcss",
+  },
+  "cSpell.customDictionaries": {
+    "custom-dictionary-workspace": {
+      "name": "custom-dictionary-workspace",
+      "path": "${workspaceFolder:mys.1024.cab}/.cspell/custom-dictionary-workspace.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  },
+}
