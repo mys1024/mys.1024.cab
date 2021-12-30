@@ -1,12 +1,22 @@
 <script lang="ts" setup>
 import { assertIsBlogRouteLocation } from '~/utils'
+import { prevRouteLocation } from '~/store'
 
 const route = useRoute()
+const router = useRouter()
+
 assertIsBlogRouteLocation(route)
 const bid = computed(() => route.meta.bid)
 const title = computed(() => route.meta.title)
 const time = computed(() => route.meta.time)
 const tags = computed(() => route.meta.tags)
+
+const back = () => {
+  if (prevRouteLocation.value?.path === '/')
+    router.back()
+  else
+    router.push('/')
+}
 </script>
 
 <template>
@@ -36,10 +46,11 @@ const tags = computed(() => route.meta.tags)
     <!-- toolbar -->
     <div>
       <router-link
-        to="/"
+        :to="prevRouteLocation?.path === '/' ? prevRouteLocation.fullPath : '/'"
         text-btn
         text-gray
         block
+        @click.prevent="back"
       >
         ← 返回上一页
       </router-link>
