@@ -17,7 +17,7 @@ const props = defineProps<{
     <div
       :class="{
         'text-2xl mb-1': props.size === 'normal',
-        'text-4xl mb-4': props.size === 'large',
+        'text-4xl font-bold mb-2': props.size === 'large',
       }"
     >
       <router-link
@@ -38,13 +38,13 @@ const props = defineProps<{
     <div
       :class="{
         'text-sm': props.size === 'normal',
-        'text-base': props.size === 'large',
+        'text-base font-bold': props.size === 'large',
       }"
       space-x-4
       text-gray-400
     >
-      <span>{{ formatDate(props.time) }}</span>
-      <span space-x-2>
+      <span inline-block>{{ formatDate(props.time) }}</span>
+      <span space-x-2 inline-block>
         <router-link
           v-for="tag in props.tags"
           :key="tag"

@@ -1,3 +1,5 @@
+@import './markdown.css';
+
 html,
 body,
 #app {
@@ -6,11 +8,15 @@ body,
   padding: 0;
 }
 
-::selection {
-  color: #ffffff;
-  background: rgba(145, 172, 145, 0.6);
+html.dark {
+  background: #0d1117;
 }
 
-html.dark {
-  background: rgb(36, 36, 36);
+::selection {
+  color: #ffffff;
+  background: rgba(162, 200, 168, 0.7);
+}
+
+.dark ::selection {
+  background: rgba(251, 146, 60, 0.7);
 }

@@ -22,8 +22,7 @@ import { isDark, toggleDark } from '~/composables'
         text-btn
         text-xl
         inline-block
-        opacity-60
-        hover:opacity-100
+        text-gray
         i-carbon-logo-github
         rel="noreferrer"
         href="https://github.com/mys1024"
@@ -32,7 +31,7 @@ import { isDark, toggleDark } from '~/composables'
       />
     </div>
     <div>
-      <span text-sm opacity-67>
+      <span text-sm text-gray>
         <a
           rel="noreferrer"
           href="https://creativecommons.org/licenses/by-nc-sa/4.0/"

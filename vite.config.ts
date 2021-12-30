@@ -25,7 +25,7 @@ export default defineConfig({
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md'],
-      exclude: ['**/README.md', '**/internal'],
+      exclude: ['**/README.md', '**/_internal.*', '**/_internal/*'],
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
@@ -55,7 +55,7 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     Unocss({
       shortcuts: [
-        ['text-btn', 'cursor-pointer transition duration-200 hover:text-cyan-500 dark:hover:text-orange-300'],
+        ['text-btn', 'cursor-pointer transition duration-200 hover:text-#9AC8A0 dark:hover:text-orange-300'],
         ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
         ['icon-btn', 'text-[0.9em] inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
       ],
@@ -69,7 +69,9 @@ export default defineConfig({
     }),
 
     // https://github.com/antfu/vite-plugin-md
-    Markdown(),
+    Markdown({
+      wrapperClasses: 'markdown-body',
+    }),
   ],
 
   optimizeDeps: {

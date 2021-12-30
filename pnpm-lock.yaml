@@ -11,6 +11,7 @@ specifiers:
   '@vueuse/core': ^7.4.1
   dayjs: ^1.10.7
   eslint: ^8.5.0
+  github-markdown-css: ^5.1.0
   jsdom: ^19.0.0
   lodash-es: ^4.17.21
   pnpm: ^6.24.3
@@ -29,6 +30,7 @@ specifiers:
 dependencies:
   '@vueuse/core': 7.4.1_vue@3.2.26
   dayjs: 1.10.7
+  github-markdown-css: 5.1.0
   lodash-es: 4.17.21
   vue: 3.2.26
   vue-router: 4.0.12_vue@3.2.26
@@ -2109,6 +2111,10 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.1.1
     dev: true
+
+  /github-markdown-css/5.1.0:
+    resolution: {integrity: sha512-QLtORwHHtUHhPMHu7i4GKfP6Vx5CWZn+NKQXe+cBhslY1HEt0CTEkP4d/vSROKV0iIJSpl4UtlQ16AD8C6lMug==}
+    dev: false
 
   /glob-parent/5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}

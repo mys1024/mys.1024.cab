@@ -19,11 +19,11 @@ const matchedBlogRoutes = computed(() => {
 
 <template>
   <div space-y-16>
-    <div>
-      <h1 text-5xl inline>
+    <div space-x-2 font-bold>
+      <h1 text-5xl inline-block>
         Blog
       </h1>
-      <span v-if="tag" text-xl text-gray>
+      <span v-if="tag" text-xl inline-block text-gray>
         #{{ tag }}
       </span>
     </div>
@@ -42,8 +42,13 @@ const matchedBlogRoutes = computed(() => {
         />
       </template>
       <template v-else>
-        <div text-2xl text-gray-400>
-          走错地方了，我猜 🤔
+        <div>
+          <p text-2xl text-gray-500>
+            这里空空如也 😕
+          </p>
+          <p text-base text-gray>
+            有没有这么一种可能，你走错地方了。
+          </p>
         </div>
       </template>
     </div>

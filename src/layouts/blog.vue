@@ -29,7 +29,7 @@ const tags = computed(() => route.meta.tags)
     />
 
     <!-- blog content -->
-    <div text-lg>
+    <div>
       <router-view />
     </div>
 

@@ -10,6 +10,7 @@
   "dependencies": {
     "@vueuse/core": "^7.4.1",
     "dayjs": "^1.10.7",
+    "github-markdown-css": "^5.1.0",
     "lodash-es": "^4.17.21",
     "vue": "^3.2.26",
     "vue-router": "^4.0.12"
