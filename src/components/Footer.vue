@@ -37,6 +37,7 @@ import { isDark, toggleDark } from '~/composables'
           href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
           target="_blank"
           title="CC BY-NC-SA 4.0"
+          text-btn
         >
           CC BY-NC-SA 4.0
         </a>
