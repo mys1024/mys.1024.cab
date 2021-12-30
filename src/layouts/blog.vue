@@ -33,6 +33,26 @@ const tags = computed(() => route.meta.tags)
       <router-view />
     </div>
 
+    <!-- toolbar -->
+    <div>
+      <router-link
+        to="/"
+        text-btn
+        text-gray
+        block
+      >
+        ← 返回上一页
+      </router-link>
+      <a
+        :href="`https://github.com/mys1024/mys.1024.cab/tree/main/src/pages/blog/${bid}`"
+        text-btn
+        text-gray
+        block
+      >
+        ← 在 Github 上查看本篇 Blog
+      </a>
+    </div>
+
     <!-- footer -->
     <div pt-8>
       <Footer />
