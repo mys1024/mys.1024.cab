@@ -3,33 +3,40 @@ import { isDark, toggleDark } from '~/composables'
 </script>
 
 <template>
-  <nav>
+  <footer>
     <div
       space-x-2
       text-xl
+      text-gray
     >
-      <button
+      <router-link
+        to="/"
+        title="首页"
+        i-carbon-home
         text-btn
-        opacity-60
-        hover:opacity-100
-        class="!outline-none"
-        @click="toggleDark()"
-      >
-        <div v-if="isDark" i-carbon-moon />
-        <div v-else i-carbon-sun />
-      </button>
-      <a
-        text-btn
-        text-xl
         inline-block
-        text-gray
+      />
+      <button
+        title="切换主题"
+        :class="{
+          'i-carbon-moon': isDark,
+          'i-carbon-sun': !isDark,
+        }"
+        class="!outline-none"
+        text-btn
+        @click="toggleDark()"
+      />
+      <a
         i-carbon-logo-github
+        text-btn
+        inline-block
         rel="noreferrer"
         href="https://github.com/mys1024"
         target="_blank"
         title="GitHub"
       />
     </div>
+
     <div>
       <span text-sm text-gray>
         <a
@@ -44,5 +51,5 @@ import { isDark, toggleDark } from '~/composables'
         © 2021 Mys1024
       </span>
     </div>
-  </nav>
+  </footer>
 </template>
