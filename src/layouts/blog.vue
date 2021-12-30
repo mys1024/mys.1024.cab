@@ -49,16 +49,15 @@ const back = () => {
         :to="prevRouteLocation?.path === '/' ? prevRouteLocation.fullPath : '/'"
         text-btn
         text-gray
-        block
         @click.prevent="back"
       >
         ← 返回上一页
       </router-link>
+      <br>
       <a
         :href="`https://github.com/mys1024/mys.1024.cab/tree/main/src/pages/blog/${bid}`"
         text-btn
         text-gray
-        block
       >
         ← 在 Github 上查看本篇 Blog
       </a>
