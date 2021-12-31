@@ -10,6 +10,12 @@ const bid = computed(() => route.meta.bid)
 const title = computed(() => route.meta.title)
 const time = computed(() => route.meta.time)
 const tags = computed(() => route.meta.tags)
+const type = computed(() => route.meta.type)
+
+const githubBaseUrl = 'https://github.com/mys1024/mys.1024.cab/blob/main'
+const githubUrl = computed(
+  () => `${githubBaseUrl}/src/pages/blog/${bid.value}/index.${type.value}`,
+)
 
 const back = () => {
   if (prevRouteLocation.value?.path === '/')
@@ -55,7 +61,7 @@ const back = () => {
       </router-link>
       <br>
       <a
-        :href="`https://github.com/mys1024/mys.1024.cab/tree/main/src/pages/blog/${bid}`"
+        :href="githubUrl"
         text-btn
         text-gray
       >

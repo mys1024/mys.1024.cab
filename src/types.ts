@@ -5,6 +5,7 @@ export type BlogMeta = {
   title: string
   time: string
   tags: string[]
+  type: 'md' | 'vue'
 }
 export type BlogRouteMeta = BlogMeta & RouteMeta
 

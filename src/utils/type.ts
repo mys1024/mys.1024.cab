@@ -15,6 +15,8 @@ function isBlogRoute(obj: any): obj is BlogRoute {
     return false
   if (typeof obj?.meta?.time !== 'string')
     return false
+  if (!(['md', 'vue'].includes(obj?.meta?.type)))
+    return false
   const tags = obj?.meta?.tags
   if (!(tags instanceof Array))
     return false
