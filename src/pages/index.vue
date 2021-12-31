@@ -4,7 +4,10 @@ import { isBlogRouteRecord } from '~/utils'
 const router = useRouter()
 const route = useRoute()
 
-const blogRoutes = router.getRoutes().filter(isBlogRouteRecord)
+const blogRoutes = router
+  .getRoutes()
+  .filter(isBlogRouteRecord)
+  .sort((a, b) => b.meta.bid - a.meta.bid)
 const tag = computed(() => route.query.tag)
 const matchedBlogRoutes = computed(() => {
   const tagOrTags = tag.value
