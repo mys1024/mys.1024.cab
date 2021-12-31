@@ -33,7 +33,7 @@ export function isBlogRouteRecord(route: RouteRecord): route is BlogRouteRecord 
 
 export function assertIsBlogRouteRecord(route: RouteRecord): asserts route is BlogRouteRecord {
   if (!isBlogRouteRecord(route))
-    throw new AssertionError('Not a BlogRoute')
+    throw new AssertionError('Not a BlogRouteRecord')
 }
 
 export function isBlogRouteLocation(route: RouteLocation): route is BlogRouteLocation {
@@ -42,5 +42,5 @@ export function isBlogRouteLocation(route: RouteLocation): route is BlogRouteLoc
 
 export function assertIsBlogRouteLocation(route: RouteLocation): asserts route is BlogRouteLocation {
   if (!isBlogRouteLocation(route))
-    throw new AssertionError('Not a BlogRoute')
+    throw new AssertionError('Not a BlogRouteLocation')
 }
