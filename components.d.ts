@@ -4,11 +4,12 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    BlankLines: typeof import('./src/components/BlankLines.vue')['default']
-    BlogInfo: typeof import('./src/components/BlogInfo.vue')['default']
-    Counter: typeof import('./src/components/Counter.vue')['default']
-    Footer: typeof import('./src/components/Footer.vue')['default']
+    BlankLines: typeof import('./src/components/blog/BlankLines.vue')['default']
+    BlogInfo: typeof import('./src/components/global/BlogInfo.vue')['default']
+    Counter: typeof import('./src/components/global/Counter.vue')['default']
+    Footer: typeof import('./src/components/global/Footer.vue')['default']
     README: typeof import('./src/components/README.md')['default']
+    Timer: typeof import('./src/components/blog/Timer.vue')['default']
   }
 }
 
