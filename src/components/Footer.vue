@@ -48,7 +48,7 @@ import { isDark, toggleDark } from '~/composables'
         >
           CC BY-NC-SA 4.0
         </a>
-        © 2021 Mys1024
+        © 2022 Mys1024
       </span>
     </div>
   </footer>
