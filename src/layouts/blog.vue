@@ -17,7 +17,8 @@ const githubUrl = computed(
   () => `${githubBaseUrl}/src/pages/blog/${bid.value}/index.${type.value}`,
 )
 
-const back = () => {
+const back = (event: Event) => {
+  event.preventDefault()
   if (prevRouteLocation.value?.path === '/')
     router.back()
   else
@@ -55,7 +56,7 @@ const back = () => {
         :to="prevRouteLocation?.path === '/' ? prevRouteLocation.fullPath : '/'"
         text-btn
         text-gray
-        @click.prevent="back"
+        @click.capture="back"
       >
         ← 返回上一页
       </router-link>

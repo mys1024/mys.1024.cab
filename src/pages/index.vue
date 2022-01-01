@@ -1,3 +1,8 @@
+<route lang="yaml">
+meta:
+  title: Blog
+</route>
+
 <script setup lang="ts">
 import { isBlogRouteRecord } from '~/utils'
 
