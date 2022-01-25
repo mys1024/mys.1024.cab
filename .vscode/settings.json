@@ -1,5 +1,9 @@
 {
-  "cSpell.words": ["Vitesse"],
+  "cSpell.words": [
+    "CNAME",
+    "Vitesse",
+    "Webify"
+  ],
   "prettier.enable": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
