@@ -92,3 +92,11 @@ html:not(.dark) .markdown-body {
   --color-attention-subtle: #fff8c5;
   --color-danger-fg: #cf222e;
 }
+
+ol, ul {
+  list-style: revert;
+}
+
+p {
+  line-height: 1.7em;
+}

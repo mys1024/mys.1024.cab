@@ -29,7 +29,7 @@ const back = (event: Event) => {
 <template>
   <main
     p="x-4 t-16 b-12"
-    space-y-12
+    space-y-8
     mx-auto
     container
     w="md:7/10 lg:3/5 xl:2/5"
@@ -51,7 +51,7 @@ const back = (event: Event) => {
     </div>
 
     <!-- toolbar -->
-    <div>
+    <div pt-2>
       <router-link
         :to="prevRouteLocation?.path === '/' ? prevRouteLocation.fullPath : '/'"
         text-btn

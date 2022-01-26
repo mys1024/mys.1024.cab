@@ -14,9 +14,9 @@ html.dark {
 
 ::selection {
   color: #ffffff;
-  background: rgba(162, 200, 168, 0.7);
+  background: rgba(135, 199, 145, 0.7);
 }
 
 .dark ::selection {
-  background: rgba(251, 146, 60, 0.7);
+  background: rgba(252, 144, 56, 0.8);
 }
