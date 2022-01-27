@@ -14,6 +14,10 @@
 
 **[Squoosh](https://squoosh.app/)** 是一个仅需浏览器就可以运行的图片压缩应用，直接访问其网址 `https://squoosh.app/` 即可打开 Squoosh 的主界面。
 
+Squoosh 的工作机制并不是将图片发送到它的服务器，然后再将压缩后的图片发回给你，而是直接在你的浏览器中执行压缩图片的代码。也就是说图片压缩操作实际上是在本地完成的。
+
+由于 Squoosh 使用了浏览器的 [Service Worker API](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API)，可以将其代码缓存在浏览器中。所以只有在第一次访问 Squoosh 时需要联网，之后在没有网络的情况下也可以正常打开并使用 Squoosh。
+
 ![squoosh-main](./_internal/squoosh-main.webp)
 
 ### 使用
@@ -30,13 +34,7 @@
 
 如果你的浏览器支持 [PWA](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps)，那么你可以以 PWA 的形式安装 Squoosh。
 
-第一个好处是可以直接从桌面打开 Squoosh。省去了先打开浏览器，再从收藏夹里打开 Squoosh 的功夫。
-
-第二个好处，也是最大的好处，是不需要网络也可以使用 Squoosh！
-
-Squoosh 的工作机制并不是将图片发送到它的服务器，然后再将压缩后的图片发回给你，而是直接通过你的浏览器执行压缩图片的代码。也就是说图片压缩操作实际上是在本地完成的，所以并不需要网络。
-
-压缩图片所需要的代码在你访问 Squoosh 的时候下载到你的浏览器中，由于 PWA 的特性，Squoosh 的代码可以保存在你的本地。因此只需要在联网的时候将 Squoosh 以 PWA 的形式安装，在没有网络的时候也能正常使用 Squoosh。
+好处是可以直接从桌面打开 Squoosh，省去了先打开浏览器，再从收藏夹里打开 Squoosh 的功夫。
 
 ![squoosh-spa-1](./_internal/squoosh-spa-1.webp)
 
@@ -44,14 +42,22 @@ Squoosh 的工作机制并不是将图片发送到它的服务器，然后再将
 
 ### 使用 Squoosh CLI
 
-Squoosh 的图形界面虽然简单而又直观，但是并不支持批量压缩图片。而使用 Squoosh 的命令行版本 Squoosh CLI 可以批量地对图片压缩。Squoosh CLI 是一个 **[Node.js](https://nodejs.org/en/)** 的 Package，所以它需要在 Node.js 的环境下运行。
+虽然 Squoosh 的图形界面简单又直观，但是并不支持批量压缩图片。而使用 Squoosh 的命令行版本 Squoosh CLI 可以批量地对图片压缩。Squoosh CLI 是一个 **[Node.js](https://nodejs.org/en/)** 的 Package，所以它需要在 Node.js 的环境下运行。
 
-Squoosh CLI 的用法也非常简单，只需下面这一行命令即可将当前目录下的 `png` 格式的图片压缩并转换为 `webp` 格式的图片：
+Squoosh CLI 的具体用法可以参考它的[官方文档](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli)。总的来说 Squoosh CLI 用起来还是比较简单的，例如只需下面这一行命令即可将当前目录下所有的 `png` 格式图片压缩并转换为 `webp` 格式的图片：
 
 ```bash
 npx @squoosh/cli --webp auto *.png
 ```
 
-<small>*注：在 Windows 中使用 PowerShell 或 CMD 来执行这行命令会出错。作为代替，可使用 Git Bash 或 WSL 来执行这行命令。*</small>
+<small style="font-size: 0.8em; line-height: 1em; opacity: 0.9;">*注：在 Windows 中使用 PowerShell 或 CMD 来执行这行命令会出错。作为代替，可使用 Git Bash 或 WSL 来执行这行命令。*</small>
 
-Squoosh CLI 的详细用法可以参考它的[官方文档](https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli)。
+此外，点击 Squoosh 编辑器界面里的 **Copy npx command** 按钮可以复制包含了当前编辑器中压缩参数的命令行。在被复制的命令行后面加上想要压缩的图片文件名就能组成一条完整的命令了。
+
+![squoosh-copy-command](./_internal/squoosh-copy-command.webp)
+
+带压缩参数的命令行看起来是这样的：
+
+```bash
+npx @squoosh/cli --webp '{"quality":75,"target_size":0,"target_PSNR":0,"method":4,"sns_strength":50,"filter_strength":60,"filter_sharpness":0,"filter_type":1,"partitions":0,"segments":4,"pass":1,"show_compressed":0,"preprocessing":0,"autofilter":0,"partition_limit":0,"alpha_compression":1,"alpha_filtering":1,"alpha_quality":100,"lossless":0,"exact":0,"image_hint":0,"emulate_jpeg_size":0,"thread_level":0,"low_memory":0,"near_lossless":100,"use_delta_palette":0,"use_sharp_yuv":0}'
+```
