@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Counter from '../src/components/Counter.vue'
+import Counter from '../src/components/global/Counter.vue'
 
 describe('Counter.vue', () => {
   it('should render', () => {
