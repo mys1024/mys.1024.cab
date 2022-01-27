@@ -26,6 +26,7 @@ export default defineConfig({
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
+      pagesDir: 'pages',
       extensions: ['vue', 'md'],
       exclude: ['**/README.md', '**/_internal.*', '**/_internal/*'],
       extendRoute(route) {
