@@ -17,7 +17,7 @@ const props = defineProps<{
     <div
       :class="{
         'text-2xl mb-1': props.size === 'normal',
-        'text-4xl font-bold mb-2': props.size === 'large',
+        'text-3xl font-bold mb-2': props.size === 'large',
       }"
     >
       <router-link
