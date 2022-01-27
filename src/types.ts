@@ -1,6 +1,6 @@
 import type { RouteLocation, RouteMeta, RouteRecord } from 'vue-router'
 
-export type BlogMeta = {
+export interface BlogMeta {
   bid: number
   title: string
   time: string
@@ -9,7 +9,7 @@ export type BlogMeta = {
 }
 export type BlogRouteMeta = BlogMeta & RouteMeta
 
-export type BlogRoute = {
+export interface BlogRoute {
   name: string
   meta: BlogRouteMeta
 }
