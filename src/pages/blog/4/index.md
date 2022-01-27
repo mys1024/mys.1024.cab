@@ -1,15 +1,12 @@
-<route>
-{
-  "meta": {
-    "layout": "blog",
-    "bid": 4,
-    "title": "图片压缩工具 Squoosh",
-    "time": "2022-01-26T18:16:13.592Z",
-    "tags": ["工具"],
-    "type": "md"
-  }
-}
-</route>
+---
+layout: blog
+type: md
+bid: 4
+title: 图片压缩工具 Squoosh
+time: 2022-01-26T18:16:13.592Z
+tags:
+  - 工具
+---
 
 
 **[Squoosh](https://squoosh.app/)** 是一个仅需浏览器就可以运行的图片压缩应用，直接访问其网址 `https://squoosh.app/` 即可打开 Squoosh 的主界面。

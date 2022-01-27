@@ -1,15 +1,12 @@
-<route>
-{
-  "meta": {
-    "layout": "blog",
-    "bid": 1,
-    "title": "上线！",
-    "time": "2021-12-29T18:49:38.312Z",
-    "tags": ["闲聊"],
-    "type": "md"
-  }
-}
-</route>
+---
+layout: blog
+type: md
+bid: 1
+title: 上线！
+time: 2021-12-29T18:49:38.312Z
+tags:
+  - 闲聊
+---
 
 
 本站的代码以 [vitesse-lite](https://github.com/antfu/vitesse-lite) 作为项目的初始模板，在此先膜拜一下 [Anthony Fu](https://antfu.me/) 大佬。

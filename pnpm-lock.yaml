@@ -12,6 +12,7 @@ specifiers:
   dayjs: ^1.10.7
   eslint: ^8.5.0
   github-markdown-css: ^5.1.0
+  gray-matter: ^4.0.3
   jsdom: ^19.0.0
   lodash-es: ^4.17.21
   pnpm: ^6.24.3
@@ -44,6 +45,7 @@ devDependencies:
   '@vitejs/plugin-vue': 2.0.1_vite@2.7.6+vue@3.2.26
   '@vue/test-utils': 2.0.0-rc.18_vue@3.2.26
   eslint: 8.5.0
+  gray-matter: 4.0.3
   jsdom: 19.0.0
   pnpm: 6.24.3
   typescript: 4.5.4

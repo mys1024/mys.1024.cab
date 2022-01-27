@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 
 import path from 'path'
+import fs from 'fs'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
@@ -10,6 +11,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-md'
 import { presetAttributify, presetIcons, presetUno } from 'unocss'
 import Unocss from 'unocss/vite'
+import matter from 'gray-matter'
 
 export default defineConfig({
   resolve: {
@@ -26,6 +28,16 @@ export default defineConfig({
     Pages({
       extensions: ['vue', 'md'],
       exclude: ['**/README.md', '**/_internal.*', '**/_internal/*'],
+      extendRoute(route) {
+        const componentPath = path.resolve(__dirname, route.component.slice(1))
+        // 将 markdown 页面中的 frontmatter 放入对应 route 的 meta 中
+        if (componentPath.endsWith('.md')) {
+          const md = fs.readFileSync(componentPath, 'utf-8')
+          const { data: frontmatter } = matter(md)
+          route.meta = Object.assign(route.meta || {}, frontmatter)
+        }
+        return route
+      },
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts

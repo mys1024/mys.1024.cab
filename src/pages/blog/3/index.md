@@ -1,15 +1,14 @@
-<route>
-{
-  "meta": {
-    "layout": "blog",
-    "bid": 3,
-    "title": "通过 Vercel 部署前端项目",
-    "time": "2022-01-25T19:18:29.606Z",
-    "tags": ["技术", "前端"],
-    "type": "md"
-  }
-}
-</route>
+---
+layout: blog
+type: md
+bid: 3
+title: 通过 Vercel 部署前端项目
+time: 2022-01-25T19:18:29.606Z
+tags:
+  - 技术
+  - 前端
+---
+
 
 如果你还在手动地部署你的前端项目，那么你应该试试 **[Vercel](https://vercel.com/)**！
 
