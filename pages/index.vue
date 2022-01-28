@@ -16,12 +16,18 @@ const blogRoutes = router
 const tag = computed(() => route.query.tag)
 const matchedBlogRoutes = computed(() => {
   const tagOrTags = tag.value
-  if (!tagOrTags)
+  if (!tagOrTags) {
     return blogRoutes
-  else if (typeof tagOrTags === 'string')
+  }
+  else if (typeof tagOrTags === 'string') {
     return blogRoutes.filter(r => r.meta.tags.includes(tagOrTags))
-  else
-    return []
+  }
+  else {
+    let routes = blogRoutes
+    for (const _tag of tagOrTags)
+      routes = _tag ? routes.filter(r => r.meta.tags.includes(_tag)) : []
+    return routes
+  }
 })
 </script>
 
@@ -32,7 +38,12 @@ const matchedBlogRoutes = computed(() => {
         Blog
       </h1>
       <span v-if="tag" text-xl inline-block text-gray>
-        #{{ tag }}
+        <template v-if="typeof tag === 'string'">
+          #{{ tag }}
+        </template>
+        <template v-for="t of tag" v-else>
+          #{{ t }}
+        </template>
       </span>
     </div>
 
