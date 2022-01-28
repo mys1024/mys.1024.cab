@@ -14,7 +14,7 @@ export interface BlogRoute {
   meta: BlogMeta & RouteMeta
 }
 
-function isBlogRoute(obj: any): obj is BlogRoute {
+export function isBlogRoute(obj: any): obj is BlogRoute {
   if (typeof obj?.meta?.bid !== 'number')
     return false
   if (typeof obj?.meta?.title !== 'string')
