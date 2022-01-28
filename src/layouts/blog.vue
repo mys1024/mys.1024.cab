@@ -14,7 +14,7 @@ const type = computed(() => route.meta.type)
 
 const githubBaseUrl = 'https://github.com/mys1024/mys.1024.cab/blob/main'
 const githubUrl = computed(
-  () => `${githubBaseUrl}/src/pages/blog/${bid.value}/index.${type.value}`,
+  () => `${githubBaseUrl}/pages/blog/${bid.value}/index.${type.value}`,
 )
 
 const back = (event: Event) => {
