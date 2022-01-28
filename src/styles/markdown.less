@@ -101,4 +101,43 @@ html:not(.dark) .markdown-body {
   p {
     line-height: 1.7em;
   }
+
+  pre {
+    overflow: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(225, 225, 225, 0.8) rgba(0, 0, 0, 0);
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(225, 225, 225, 0.8);
+      border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+html.dark .markdown-body {
+  pre {
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0);
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    &::-webkit-scrollbar {
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
 }
