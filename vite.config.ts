@@ -12,6 +12,7 @@ import Markdown from 'vite-plugin-md'
 import { presetAttributify, presetIcons, presetUno } from 'unocss'
 import Unocss from 'unocss/vite'
 import matter from 'gray-matter'
+import hljs from 'highlight.js'
 
 export default defineConfig({
   resolve: {
@@ -84,6 +85,19 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-md
     Markdown({
       wrapperClasses: 'markdown-body',
+      markdownItOptions: {
+        highlight(str, lang) {
+          if (lang && hljs.getLanguage(lang)) {
+            try {
+              return hljs.highlight(str, { language: lang }).value
+            }
+            catch (err) {
+              console.error(err)
+            }
+          }
+          return ''
+        },
+      },
     }),
   ],
 
