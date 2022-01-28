@@ -4,7 +4,7 @@ meta:
 </route>
 
 <script setup lang="ts">
-import { isBlogRouteRecord } from '~/utils'
+import { isBlogRouteRecord } from '~/types'
 
 const router = useRouter()
 const route = useRoute()

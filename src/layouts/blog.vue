@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { assertIsBlogRouteLocation } from '~/utils'
+import { assertIsBlogRouteLocation } from '~/types'
 import { prevRouteLocation } from '~/store'
 
 const route = useRoute()
