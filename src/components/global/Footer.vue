@@ -5,16 +5,16 @@ import { isDark, toggleDark } from '~/composables'
 <template>
   <footer>
     <div
-      space-x-2
       text-xl
       text-gray
+      inline-flex
+      gap-2
     >
       <router-link
         to="/"
         title="首页"
         i-carbon-home
         text-btn
-        inline-block
       />
       <button
         title="切换主题"
@@ -29,7 +29,6 @@ import { isDark, toggleDark } from '~/composables'
       <a
         i-carbon-logo-github
         text-btn
-        inline-block
         rel="noreferrer"
         href="https://github.com/mys1024"
         target="_blank"

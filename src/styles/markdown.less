@@ -119,13 +119,18 @@ html:not(.dark) .markdown-body {
   }
 
   pre {
-    overflow: scroll;
+    max-height: 65vh;
+    overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(225, 225, 225, 0.8) rgba(0, 0, 0, 0);
 
     &::-webkit-scrollbar-thumb {
       background-color: rgba(225, 225, 225, 0.8);
       border-radius: 2px;
+
+      &:hover {
+        background-color: rgba(180, 180, 180, 0.8);
+      }
     }
 
     &::-webkit-scrollbar {
@@ -142,10 +147,14 @@ html:not(.dark) .markdown-body {
 
 html.dark .markdown-body {
   pre {
-    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0);
+    scrollbar-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0);
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.2);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
     }
 
     &::-webkit-scrollbar {
