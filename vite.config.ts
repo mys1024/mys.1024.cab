@@ -15,6 +15,8 @@ import matter from 'gray-matter'
 import hljs from 'highlight.js'
 import anchor from 'markdown-it-anchor'
 import uslug from 'uslug'
+// @ts-expect-error This package doesn't export types
+import lazyLoading from 'markdown-it-image-lazy-loading'
 
 export default defineConfig({
   resolve: {
@@ -94,6 +96,10 @@ export default defineConfig({
             symbol: '←',
             renderAttrs: () => ({ 'aria-hidden': 'true' }),
           }),
+        })
+        md.use(lazyLoading, {
+          image_size: true,
+          base_path: `${path.resolve(__dirname, 'public')}/`,
         })
       },
       markdownItOptions: {
