@@ -51,20 +51,22 @@ onMounted(async() => {
     w="md:7/10 lg:3/5 xl:2/5"
     text="gray-700 dark:gray-200"
   >
-    <!-- blog info -->
-    <BlogInfo
-      :bid="bid"
-      :title="title"
-      :time="time"
-      :tags="tags"
-      :enable-link="false"
-      size="large"
-    />
+    <article>
+      <!-- blog info -->
+      <BlogInfo
+        :bid="bid"
+        :title="title"
+        :time="time"
+        :tags="tags"
+        :enable-link="false"
+        size="large"
+      />
 
-    <!-- blog content -->
-    <div>
-      <router-view />
-    </div>
+      <!-- blog content -->
+      <div>
+        <router-view />
+      </div>
+    </article>
 
     <!-- toolbar -->
     <div pt-2>
