@@ -4,7 +4,9 @@ specifiers:
   '@antfu/eslint-config': ^0.16.0
   '@iconify-json/carbon': ^1.0.14
   '@types/lodash-es': ^4.17.5
+  '@types/markdown-it': ^12.2.3
   '@types/node': ^17.0.12
+  '@types/uslug': ^1.0.1
   '@unocss/reset': ^0.22.2
   '@vitejs/plugin-vue': ^2.1.0
   '@vue/test-utils': ^2.0.0-rc.18
@@ -18,11 +20,14 @@ specifiers:
   jsdom: ^19.0.0
   less: ^4.1.2
   lodash-es: ^4.17.21
+  markdown-it: ^12.3.2
+  markdown-it-anchor: ^8.4.1
   pnpm: ^6.28.0
   typescript: ^4.5.5
   unocss: ^0.18.1
   unplugin-auto-import: ^0.5.11
   unplugin-vue-components: ^0.17.14
+  uslug: ^1.0.4
   vite: ^2.7.13
   vite-plugin-md: ^0.11.7
   vite-plugin-pages: ^0.19.9
@@ -43,7 +48,9 @@ devDependencies:
   '@antfu/eslint-config': 0.16.0_eslint@8.7.0+typescript@4.5.5
   '@iconify-json/carbon': 1.0.14
   '@types/lodash-es': 4.17.5
+  '@types/markdown-it': 12.2.3
   '@types/node': 17.0.12
+  '@types/uslug': 1.0.1
   '@unocss/reset': 0.22.6
   '@vitejs/plugin-vue': 2.1.0_vite@2.7.13+vue@3.2.29
   '@vue/test-utils': 2.0.0-rc.18_vue@3.2.29
@@ -53,11 +60,14 @@ devDependencies:
   highlight.js: 11.4.0
   jsdom: 19.0.0
   less: 4.1.2
+  markdown-it: 12.3.2
+  markdown-it-anchor: 8.4.1_d643ca6eb40ae68ab966a77bead78073
   pnpm: 6.28.0
   typescript: 4.5.5
   unocss: 0.18.1
   unplugin-auto-import: 0.5.11_@vueuse+core@7.5.5+vite@2.7.13
   unplugin-vue-components: 0.17.14_vite@2.7.13+vue@3.2.29
+  uslug: 1.0.4
   vite: 2.7.13_less@4.1.2
   vite-plugin-md: 0.11.7_vite@2.7.13
   vite-plugin-pages: 0.19.9_vite@2.7.13
@@ -359,6 +369,10 @@ packages:
 
   /@types/throttle-debounce/2.1.0:
     resolution: {integrity: sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==}
+    dev: true
+
+  /@types/uslug/1.0.1:
+    resolution: {integrity: sha512-o1q19vUrPPO50ZwJTO/1Wu/EcMWKFE8lpdL7GfZYXADiR3lOpGDQCpZMgHfMA8flFu5JNUe2OWXXv4YflId1ew==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.10.1_0f442f6b60390429061d5d9b6bcaaba6:
@@ -2660,6 +2674,16 @@ packages:
       semver: 6.3.0
     dev: true
 
+  /markdown-it-anchor/8.4.1_d643ca6eb40ae68ab966a77bead78073:
+    resolution: {integrity: sha512-sLODeRetZ/61KkKLJElaU3NuU2z7MhXf12Ml1WJMSdwpngeofneCRF+JBbat8HiSqhniOMuTemXMrsI7hA6XyA==}
+    peerDependencies:
+      '@types/markdown-it': '*'
+      markdown-it: '*'
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      markdown-it: 12.3.2
+    dev: true
+
   /markdown-it/12.3.2:
     resolution: {integrity: sha512-TchMembfxfNVpHkbtriWltGWc+m3xszaRD0CZup7GFFhzIgQqxIfn3eGj1yZpfuflzPvfkt611B2Q/Bsk1YnGg==}
     hasBin: true
@@ -3566,6 +3590,11 @@ packages:
       - supports-color
     dev: true
 
+  /unorm/1.6.0:
+    resolution: {integrity: sha512-b2/KCUlYZUeA7JFUuRJZPUtr4gZvBh7tavtv4fvk4+KV9pfGiR6CQAQAWl49ZpR3ts2dk4FYkP7EIgDJoiOLDA==}
+    engines: {node: '>= 0.4.0'}
+    dev: true
+
   /unplugin-auto-import/0.5.11_@vueuse+core@7.5.5+vite@2.7.13:
     resolution: {integrity: sha512-MJ3POLe/IysRHF4yd32FkKDoxqSRoiuIHm89ys67B8FLuz2Pvh9poeqTVe6IhJsNxwv0+GSdFfj5Dpq24lhm4g==}
     engines: {node: '>=14'}
@@ -3646,6 +3675,13 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.1.1
+    dev: true
+
+  /uslug/1.0.4:
+    resolution: {integrity: sha1-uaIvCRTgqGFAYz2swwLl9PpFBnc=}
+    engines: {node: '>= 0.4.0'}
+    dependencies:
+      unorm: 1.6.0
     dev: true
 
   /v8-compile-cache/2.3.0:

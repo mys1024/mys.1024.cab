@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { assertIsBlogRouteLocation } from '~/types'
 import { prevRouteLocation } from '~/store'
+import { scrollToElement } from '~/utils'
 
 const route = useRoute()
 const router = useRouter()
@@ -24,6 +25,21 @@ const back = (event: Event) => {
   else
     router.push('/')
 }
+
+onMounted(async() => {
+  // handle route.hash
+  if (route.hash)
+    scrollToElement(route.hash, 500)
+  // handle anchor links
+  const headerAnchors = document.querySelectorAll<HTMLElement>('.header-anchor')
+  headerAnchors.forEach((anchor) => {
+    anchor.addEventListener('click', (event) => {
+      event.preventDefault()
+      scrollToElement(anchor)
+      router.replace(route.path + anchor.getAttribute('href'))
+    })
+  })
+})
 </script>
 
 <template>

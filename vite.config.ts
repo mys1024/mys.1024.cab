@@ -13,6 +13,8 @@ import { presetAttributify, presetIcons, presetUno } from 'unocss'
 import Unocss from 'unocss/vite'
 import matter from 'gray-matter'
 import hljs from 'highlight.js'
+import anchor from 'markdown-it-anchor'
+import uslug from 'uslug'
 
 export default defineConfig({
   resolve: {
@@ -85,6 +87,15 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-md
     Markdown({
       wrapperClasses: 'markdown-body',
+      markdownItSetup(md) {
+        md.use(anchor, {
+          slugify: s => uslug(s),
+          permalink: anchor.permalink.linkInsideHeader({
+            symbol: '←',
+            renderAttrs: () => ({ 'aria-hidden': 'true' }),
+          }),
+        })
+      },
       markdownItOptions: {
         highlight(str, lang) {
           if (lang && hljs.getLanguage(lang)) {

@@ -8,9 +8,11 @@ const router = createRouter({
   routes: setupLayouts(generatedRoutes),
 })
 
-router.beforeEach((to, from) => {
-  if (from.path !== '/' || from.matched.length !== 0)
-    prevRouteLocation.value = from
+router.afterEach((to, from) => {
+  if (from.path !== '/' || from.matched.length !== 0) {
+    if (to.path !== from.path)
+      prevRouteLocation.value = from
+  }
   if (typeof to.meta.title === 'string')
     document.title = `${to.meta.title} - Mys1024`
   else

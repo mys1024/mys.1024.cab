@@ -102,6 +102,22 @@ html:not(.dark) .markdown-body {
     line-height: 1.7em;
   }
 
+  a.header-anchor {
+    padding-left: 0.2em;
+    opacity: 0;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity ease 200ms;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    &:hover, &:focus {
+      .header-anchor {
+        opacity: 0.85;
+      }
+    }
+  }
+
   pre {
     overflow: scroll;
     scrollbar-width: thin;
