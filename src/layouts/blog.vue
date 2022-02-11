@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { assertIsBlogRouteLocation } from '~/types'
 import { prevRouteLocation } from '~/store'
-import { scrollToElement } from '~/utils'
+import { scrollToElement, scrollToTop } from '~/utils'
 
 const route = useRoute()
 const router = useRouter()
@@ -27,9 +27,11 @@ const back = (event: Event) => {
 }
 
 onMounted(async() => {
-  // handle route.hash
+  // scroll when entering the blog page
   if (route.hash)
     scrollToElement(route.hash, 500)
+  else
+    scrollToTop(100)
   // handle anchor links
   const headerAnchors = document.querySelectorAll<HTMLElement>('.header-anchor')
   headerAnchors.forEach((anchor) => {

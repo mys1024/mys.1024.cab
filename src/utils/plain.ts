@@ -12,6 +12,19 @@ export function delay(time = 0) {
 }
 
 /**
+ * Scroll to top.
+ * @param delayTime delay time (ms), default is 0
+ */
+export async function scrollToTop(delayTime = 0) {
+  await delay(delayTime)
+  window.scrollTo({
+    left: 0,
+    top: 0,
+    behavior: 'smooth',
+  })
+}
+
+/**
  * Scroll to the an HTML element.
  * @param elementOrSelector an HTML element or a CSS selector
  * @param delayTime delay time (ms), default is 0
