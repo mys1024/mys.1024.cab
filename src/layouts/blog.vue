@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { assertIsBlogRouteLocation } from '~/types'
 import { prevRouteLocation } from '~/store'
-import { scrollToElement, scrollToTop } from '~/utils'
 
 const route = useRoute()
 const router = useRouter()
@@ -18,7 +17,7 @@ const githubUrl = computed(
   () => `${githubBaseUrl}/pages/blog/${bid.value}.${type.value}`,
 )
 
-const back = (event: Event) => {
+const back = (event: PointerEvent) => {
   event.preventDefault()
   if (prevRouteLocation.value?.path === '/')
     router.back()
@@ -26,22 +25,17 @@ const back = (event: Event) => {
     router.push('/')
 }
 
-onMounted(async() => {
-  // scroll when entering the blog page
-  if (route.hash)
-    scrollToElement(route.hash, 500)
-  else
-    scrollToTop(100)
-  // handle anchor links
-  const headerAnchors = document.querySelectorAll<HTMLElement>('.header-anchor')
-  headerAnchors.forEach((anchor) => {
-    anchor.addEventListener('click', (event) => {
-      event.preventDefault()
-      scrollToElement(anchor)
-      router.replace(route.path + anchor.getAttribute('href'))
-    })
-  })
-})
+// handle anchor links' click event with vue-router
+const onBlogContentClick = (event: PointerEvent) => {
+  const target = event.target as Element
+  if (target.tagName !== 'A' || !target.classList.contains('header-anchor'))
+    return
+  const href = target.getAttribute('href')
+  if (!href)
+    return
+  event.preventDefault()
+  router.replace(href)
+}
 </script>
 
 <template>
@@ -64,7 +58,7 @@ onMounted(async() => {
     />
 
     <!-- blog content -->
-    <div>
+    <div @click.capture="onBlogContentClick">
       <router-view />
     </div>
 
