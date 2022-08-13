@@ -4,7 +4,7 @@
     space-y-12
     mx-auto
     container
-    w="md:7/10 lg:3/5 xl:2/5"
+    w="md:7/10 lg:3/5 xl:1/2"
     text="gray-700 dark:gray-200"
   >
     <div>
