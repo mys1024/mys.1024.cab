@@ -21,9 +21,9 @@ router.afterEach((to, from) => {
       prevRouteLocation.value = from
   }
   if (typeof to.meta.title === 'string')
-    document.title = `${to.meta.title} - Mys1024`
+    document.title = `${to.meta.title} - mys1024`
   else
-    document.title = 'Mys1024'
+    document.title = 'mys1024'
 })
 
 export default router
