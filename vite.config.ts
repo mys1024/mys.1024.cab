@@ -84,6 +84,7 @@ export default defineConfig({
           scale: 1.2,
         }),
       ],
+      exclude: ['pages/blog/*.md'],
     }),
 
     // https://github.com/antfu/vite-plugin-md
